@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Quicksand:wght@300..700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  font-family: "Covered By Your Grace", sans-serif;
+}
+
+#navbar {
+  position: relative;
+}
+
+#navbar a {
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Dropdown Menu */
+#servicesDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  margin-top: 0.5rem;
+}
+
+#servicesDropdown.show {
+  display: block;
+}
+
+#hamburgerButton {
+  font-size: 1.5rem;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  #navbar {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #navbar a,
+  #navbar .relative {
+    display: block;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .tab-button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Hero Section */
+.hero-bg {
+  background-image: url("../image/home.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  position: relative;
+}
+
+.header {
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 1rem;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#profil-daerah {
+  background: linear-gradient(to bottom, #f3f4f6, #ffffff);
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+.content-container {
+  height: 600px;
+}
+
+.active {
+  border-bottom: 2px solid rgb(22 163 74);
+  color: rgb(22 163 74);
+}
+
+#news {
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+#news::-webkit-scrollbar {
+  display: none;
+}
+.custom-scrollbar {
+  scrollbar-width: none;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-button {
+  @apply flex items-center px-6 py-3 rounded-full transition-all duration-300 
+  bg-gray-200 text-gray-700 hover:bg-green-200 focus:outline-none;
+}
+.tab-button.active {
+  @apply bg-green-600 text-white shadow-lg;
+}
+
+/* animasi angka */
+@keyframes numberAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-number {
+  animation: numberAnimation 1s ease-out;
+}
