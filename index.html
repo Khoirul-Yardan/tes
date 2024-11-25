@@ -7,37 +7,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
     <header class="bg-[#85BDA6] py-4 fixed top-0 w-full z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
             <!-- Logo -->
             <div class="text-3xl font-bold text-white">Pagelaran</div>
 
-          <!-- Hamburger Button -->
-    <button id="hamburgerButton" class="md:hidden text-white hover:text-green-200 focus:outline-none fixed top-4 right-4 z-50">
-        <i class="fas fa-bars"></i>
-    </button>
+            <!-- Hamburger Button for Mobile -->
+            <button id="hamburgerButton" class="md:hidden text-white hover:text-green-200 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
 
-    <!-- Mobile Menu -->
-    <nav id="mobileMenu" class="fixed top-0 right-0 w-full bg-[#2F4B26] z-40 flex flex-col items-center md:hidden transform -translate-x-full transition-transform duration-300 ease-in-out">
-        <a href="#home" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">Home</a>
-        <a href="#profile" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">Profil Daerah</a>
-        <a href="#news" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">News</a>
-        <a href="#about" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">About</a>
-        <a href="#service" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">Services</a>
-        <a href="#contact" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">Contact</a>
-    </nav>
+            <!-- Mobile Menu -->
+            <nav id="mobileMenu" class="flex flex-col items-center md:flex-row">
+                <a href="#home" class="py-2 px-4 text-white hover:bg-green-600">Home</a>
+                <a href="#profile" class="py-2 px-4 text-white hover:bg-green-600">Profil Daerah</a>
+                <a href="#news" class="py-2 px-4 text-white hover:bg-green-600">News</a>
+                <a href="#about" class="py-2 px-4 text-white hover:bg-green-600">About</a>
+                <a href="#service" class="py-2 px-4 text-white hover:bg-green-600">Services</a>
+                <a href="#contact" class="py-2 px-4 text-white hover:bg-green-600">Contact</a>
+            </nav>
 
-    <!-- Desktop Navbar -->
-    <nav id="navbar" class="hidden md:flex justify-center space-x-6 items-center text-lg bg-[#2F4B26] py-4 w-full">
-        <a class="text-white hover:text-green-200" href="#home">Home</a>
-        <a class="text-white hover:text-green-200" href="#profile">Profil Daerah</a>
-        <a class="text-white hover:text-green-200" href="#news">News</a>
-        <a class="text-white hover:text-green-200" href="#about">About</a>
-        <a class="text-white hover:text-green-200" href="#service">Services</a>
-        <a class="text-white hover:text-green-200" href="#contact">Contact</a>
-    </nav>
            
 
             <!-- Social Media Icons -->
