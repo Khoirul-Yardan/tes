@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -5,8 +6,75 @@
     <title>Pagelaran</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Custom styles remain the same */
+        body {
+            font-family: "Roboto", sans-serif;
+        }
+
+        .logo {
+            font-family: "Covered By Your Grace", sans-serif;
+        }
+
+        #navbar {
+            position: relative;
+        }
+
+        #navbar a {
+            font-size: 1rem;
+            padding: 0.5rem 0.75rem;
+        }
+
+        /* Dropdown Menu */
+        #servicesDropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            margin-top: 0.5rem;
+        }
+
+        #servicesDropdown.show {
+            display: block;
+        }
+
+        #hamburgerButton {
+            font-size: 1.5rem;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            #navbar {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            #navbar a,
+            #navbar .relative {
+                display: block;
+                padding: 0.5rem 1.5rem;
+                width: 100%; /* Make links full width */
+            }
+
+            .tab-button {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+
+        /* Other styles remain unchanged */
+    </style>
+</head>
+<body>
     <header class="bg-[#85BDA6] py-4 fixed top-0 w-full z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
             <!-- Logo -->
@@ -18,16 +86,24 @@
             </button>
 
             <!-- Mobile Menu -->
-            <nav id="mobileMenu" class="flex flex-col items-center md:flex-row">
-                <a href="#home" class="py-2 px-4 text-white hover:bg-green-600">Home</a>
-                <a href="#profile" class="py-2 px-4 text-white hover:bg-green-600">Profil Daerah</a>
-                <a href="#news" class="py-2 px-4 text-white hover:bg-green-600">News</a>
-                <a href="#about" class="py-2 px-4 text-white hover:bg-green-600">About</a>
-                <a href="#service" class="py-2 px-4 text-white hover:bg-green-600">Services</a>
-                <a href="#contact" class="py-2 px-4 text-white hover:bg-green-600">Contact</a>
+            <nav id="mobileMenu" class="fixed top-16 right-0 w-full bg-[#2F4B26] z-50 flex flex-col items-center hidden">
+                <a href="#home" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">Home</a>
+                <a href="#profile" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">Profil Daerah</a>
+                <a href="#news" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">News</a>
+                <a href="#about" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">About</a>
+                <a href="#service" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">Services</a>
+                <a href="#contact" class="py-2 px-4 w-full text-white hover:bg-green-600 text-center">Contact</a>
             </nav>
 
-           
+            <!-- Desktop Navbar -->
+            <nav id="navbar" class="hidden md:flex space-x-6 items-center text-lg">
+                <a class="text-white hover:text-green-200" href="#home"> Home</a>
+                <a class="text-white hover:text-green-200" href="#profile">Profil Daerah</a>
+                <a class="text-white hover:text-green-200" href="#news">News</a>
+                <a class="text-white hover:text-green-200" href="#about">About</a>
+                <a class="text-white hover:text-green-200" href="#service">Service</a>
+                <a class="text-white hover:text-green-200" href="#contact">Contact</a>
+            </nav>
 
             <!-- Social Media Icons -->
             <div class="hidden md:flex space-x-4 text-white">
@@ -38,7 +114,6 @@
             </div>
         </div>
     </header>
-
 
     <section class="hero-bg h-screen flex items-center justify-center relative" id="home">
         <div class="hero-overlay absolute inset-0 bg-black opacity-50"></div>
@@ -64,7 +139,7 @@
                 <h2 class="mt-4">Ha</h2>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center transition-transform duration-200 ease-in transform hover:scale-105 overflow-hidden">
-                <h3 class="text-green-600 text-lg mb-2 text-strong font-bold">Penduduk</h3>
+                <h3 class="text-green-600 text-lg mb-2 font-bold">Penduduk</h3>
                 <p class="text-6xl p-3 animate-number" data-value="68147">0</p>
                 <h2 class="mt-4">Jiwa</h2>
             </div>
@@ -89,7 +164,7 @@
                     <i class="fas fa-map-marker-alt mr-2"></i>Geografi
                 </button>
                 <button onclick="showTab('demografi')" id="demografi-tab" class="tab-button">
-                    <i class="fas fa-users mr-2"></i>Demografi
+ <i class="fas fa-users mr-2"></i>Demografi
                 </button>
             </div>
 
@@ -101,19 +176,13 @@
                 </div>
                 <div id="geografi-content" class="tab-content hidden">
                     <p class="text-gray-800 leading-relaxed">
-                        Desa Pagelaran merupakan salah satu dari 10 desa yang ada dalam wilayah Kecamatan Pagelaran, Kabupaten Malang. Jarak Desa Pagelaran dari kota Malang adalah 30 km, luas wilayahnya 510.300 Ha. Desa Pagelaran terdapat 4 dukuh/dusun : Dusun Sipring, Dusun Krajan, Dusun Mentaraman dan Dusun Sumbergempol, serta ada 7 RW dan 37 RT. <br> <strong>Batas Wilayah Desa/Kelurahan</strong> <br> Batas Desa Pagelaran : <br> Sebelah Utara : Desa Banjarejo <br> Sebelah Timur : Desa Sidorejo <br> Sebelah Selatan : Desa Suwaru <br> Sebelah Barat : Desa Kademangan <br> Di Desa Pagelaran batas antar dusun juga sudah jelas, karena terdapat gapura pembatas tiap dusun di Desa Pagelaran. <br> <strong>1. Keadaan Tanah, Luas Penggunaan Tanah, Curah Hujan, dan Keadaan Air.</strong> <br> Keadaan tanah di Desa Pagelaran menurut kesuburunnya ada 3 yaitu tanah sangat subur, subur, dan sedang. Tanah di daerah Desa Pagelaran digunakan sebagai kerajinan gerabah warga. <br> Luas tanah di Desa Pagelaran 510.300 Ha. Digunakan sebagai Pemukiman seluas 114 Ha, Bangunan seluas 1,15 Ha, Pertanian / Sawah seluas 162 Ha, Ladang/ Tegalan seluas 80 Ha, tempat olahraga dan rekreasi seluas 0,87 Ha, dan untuk Perikanan seluas 0,5 Ha. <br> Ketinggian Desa Pagelaran dari permukaan laut 890m Dpl. Keadaan suhu rata-rata di Desa Pagelaran 20°C. Curah hujan Desa Pagelaran 1.500 mm/th. <br> Keadaan air di Desa Pagelara n bersih dan tidak pernah terjadi kekeringan di saat musim kemarau tiba. Karena, air di dapatkan dari sumber. Sehingga, untuk air pertanian warga Desa Pagelaran tidak kesusahan untuk masalah pengairan. <br> <strong>2. keadaan Pertanian, Perkebunan, Kehutanan dan Tanaman Pangan</strong> <br> Dalam sektor pertanian lahan di Desa Pagelaran rata-rata ditanami padi, tebi, kacang-kacangan, dan sebagian ada yang ditanami buah-buahan, seperti : salak, buah pepaya, dll. Ada pula tanaman apotek hidup yang ditanam di sebagian rumah warga. Di Desa Pagelaran terdapat KUD yang aktif dalam memasarkan hasil pertanian dan perkebunan warga. Tetapi, KUD tidak melayani simpan pinjam. Warga dapat mendapatkan pinjaman ke Koperasi Simpan Pinjam ataupun Bank. Di Desa Pagelaran ini terdapat 5 Kelompok tani,rejeki yang aktif hanya lah 2 Kelompok Tani. Nama kelompok tani di Desa Pagelaran adalah Sumber Rejeki 1 dan Sumber Rejeki 2. Jenis tanaman yang terdapat kelompok tani ini adalah jenis palawija dan padi. Terdapat 125 anggota pada kelompok tani sumber rejeki 1 dan 87 anggota untuk kelompok tani sumber rejeki 2. <br> <strong>3. Keadaan Peternakan dan Perikanan</strong><br>Warga Desa Pagelaran sebagian warganya berternak dan budidaya ikan. Hewwwan yang diternak warga Desa Pagelaran diantaranya sapi, kambing, ayam, dan itik. Dan terdapat warga yang budidaya ikan lele dumbo. Produksi yang dihasilkan diantaranya daging ayam, telur ayam, lelem dll. Desa Pagelaran memiliki 17 kolam perikanan. 
-                    </p>
-                </div>
-                <div id="demografi-content" class="tab-content hidden">
-                    <p class="text-gray-800 leading-relaxed">
-                        Jumlah penduduk Desa Pagelaran sekitar 8.338 jiwa, terdiri dari 4.098 laki-laki dan 4.240 perempuan. Terdapat sekitar 2.671 Kepala Keluarga dengan kepadatan penduduk sekitar 23 jiwa per hektardengan sedikit populasi beragama Katolik. Etnis yang dominan adalah Jawa (4.156 jiwa) dan Madura (2.491 jiwa). Dan ekonomi masyarakat desa ini sebagian besar bergantung pada pertanian dengan komoditas seperti padi, tebu, dan berbagai jenis sayuran serta buah-buahan. Selain itu, kerajinan gerabah juga menjadi salah satu sumber pendapatan utama masyarakat
-                    </p>
+                        Desa Pagelaran merupakan salah satu dari 10 desa yang ada dalam wilayah Kecamatan Pagelaran, Kabupaten Malang. Jarak Desa Pagelaran dari kota Malang adalah 30 km, luas wilayahnya 510.300 Ha. Desa Pagelaran terdapat 4 dukuh/dusun : Dusun Sipring, Dusun Krajan, Dusun Mentaraman dan Dusun Sumbergempol, serta ada 7 RW dan 37 RT. <br> <strong>Batas Wilayah Desa/Kelurahan</strong> <br> Batas Desa Pagelaran : <br> Sebelah Utara : Desa Banjarejo <br> Sebelah Timur : Desa Sidorejo <br> Sebelah Selatan : Desa Suwaru <br> Sebelah Barat : Desa Kademangan <br> Di Desa Pagelaran batas antar dusun juga sudah jelas, karena terdapat gapura pembatas tiap dusun di Desa Pagelaran. <br> <strong>1. Keadaan Tanah, Luas Penggunaan Tanah, Curah Hujan, dan Keadaan Air.</strong> <br> Keadaan tanah di Desa Pagelaran menurut kesuburunnya ada 3 yaitu tanah sangat subur, subur, dan sedang. Tanah di daerah Desa Pagelaran digunakan sebagai kerajinan gerabah warga. <br> Luas tanah di Desa Pagelaran 510.300 Ha. Digunakan sebagai Pemukiman seluas 114 Ha, Bangunan seluas 1,15 Ha, Pertanian / Sawah seluas 162 Ha, Ladang/ Tegalan seluas 80 Ha, tempat olahraga dan rekreasi seluas 0,87 Ha, dan untuk Perikanan seluas 0,5 Ha. <br> Ketinggian Desa Pagelaran dari permukaan laut 890m Dpl. Keadaan suhu rata-rata di Desa Pagelaran 20°C. Curah hujan Desa Pagelaran 1.500 mm/th. <br> Keadaan air di Desa Pagelara n bersih dan tidak pernah terjadi kekeringan di saat musim kemarau tiba. Karena, air di dapatkan dari sumber. Sehingga, untuk air pertanian warga Desa Pagelaran tidak kesusahan untuk masalah pengairan. <br> <strong>2. keadaan Pertanian, Perkebunan, Kehutanan dan Tanaman Pangan</strong> <br> Dalam sektor pertanian lahan di Desa Pagelaran rata-rata ditanami padi, tebi, kacang-kacangan, dan sebagian ada yang ditanami buah-buahan, seperti : salak, buah pepaya, dll. Ada pula tanaman apotek hidup yang ditanam di sebagian rumah warga. Di Desa Pagelaran terdapat KUD yang aktif dalam memasarkan hasil pertanian dan perkebunan warga. Tetapi, KUD tidak melayani simpan pinjam. Warga dapat mendapatkan pinjaman ke Koperasi Simpan Pinjam ataupun Bank. Di Desa Pagelaran ini terdapat 5 Kelompok tani,rejeki yang aktif hanya lah 2 Kelompok Tani. Nama kelompok tani di Desa Pagelaran adalah Sumber Rejeki 1 dan Sumber Rejeki 2. Jenis tanaman yang terdapat kelompok tani ini adalah jenis palawija dan padi. Terdapat 125 anggota pada kelompok tani sumber rejeki 1 dan 87 anggota untuk kelompok tani sumber rejeki 2. <br> <strong>3. Keadaan Peternakan dan Perikanan</strong><br>Warga Desa Pagelaran sebagian warganya berternak dan budidaya ikan. Hewan yang diternak warga Desa Pagelaran diantaranya sapi, kambing, ayam, dan itik. Dan terdapat warga yang budidaya ikan lele dumbo. Produksi yang dihasilkan diantaranya daging ayam, telur ayam, lele, dll. Desa Pagelaran memiliki 17 kolam perikanan. 
+                </p>
                 </div>
             </div>
         </div>
     </section>
     
-
     <section id="news" class="bg-gray-100 flex items-center justify-center">
         <div class="bg-white bg-opacity-50 shadow-lg p-6 mx-4 my-auto w-full rounded-lg shadow-lg">
             <div class="max-w-4xl mx-auto py-12 px-4">
@@ -261,5 +330,86 @@
     </section>
     
     <script src="assets/js/script.js"></script>
+    <script>
+        function toggleNavbar() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('hidden');
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('servicesDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerButton = document.getElementById('hamburgerButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            hamburgerButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+
+        // profil-daerah
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+                content.classList.add('hidden');
+            });
+
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+            let activeContent = document.getElementById(`${tabName}-content`);
+            activeContent.classList.remove('hidden');
+            activeContent.classList.add('active');
+        }
+
+        showTab('sejarah');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedNumbers = document.querySelectorAll('.animate-number');
+
+            const animateNumber = (element) => {
+                const value = parseInt(element.getAttribute('data-value'));
+                const duration = 1500;
+                const interval = 50;
+                const steps = duration / interval;
+                const increment = value / steps;
+
+                let currentValue = 0;
+                const updateNumber = () =>{
+                    currentValue += increment;
+                    if (currentValue < value) {
+                        element.textContent = Math.round(currentValue).toLocaleString();
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        element.textContent = value.toLocaleString();
+                    }
+                };
+
+                updateNumber();
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animatedNumbers.forEach(animateNumber);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(document.querySelector('section'));
+        });
+
+        const hamburgerButton = document.getElementById("hamburgerButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        hamburgerButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");  
+        });
+    </script>
 </body>
 </html>
