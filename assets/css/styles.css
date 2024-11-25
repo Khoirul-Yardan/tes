@@ -13,27 +13,12 @@ body {
 }
 
 #navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  padding: 0.5rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 #navbar a {
   font-size: 1rem;
   padding: 0.5rem 0.75rem;
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-#navbar a:hover {
-  color: #16a34a; /* Green hover effect */
 }
 
 /* Dropdown Menu */
@@ -44,10 +29,6 @@ body {
   z-index: 1000;
   display: none;
   margin-top: 0.5rem;
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #servicesDropdown.show {
@@ -56,35 +37,36 @@ body {
 
 #hamburgerButton {
   font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none; /* Hidden by default for larger screens */
 }
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
-  #hamburgerButton {
-    display: block; /* Show hamburger menu on smaller screens */
-  }
-
   #navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-    background-color: white;
-  }
-
-  #navbar a {
-    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
     width: 100%;
-    text-align: left;
+    background-color: white;
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  #navbar.active {
-    display: flex;
-    flex-direction: column;
+  #navbar a,
+  #navbar .relative {
+    display: block;
+    padding: 0.5rem 1.5rem;
   }
+
+  .tab-button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* Hero Section */
@@ -96,27 +78,22 @@ body {
   position: relative;
 }
 
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.4);
+.header {
+  background: none;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-}
-
-.header {
-  position: relative;
   z-index: 1;
   padding: 1rem;
 }
 
-#profil-daerah {
-  background: linear-gradient(to bottom, #f3f4f6, #ffffff);
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.container {
-  padding: 1rem;
+#profil-daerah {
+  background: linear-gradient(to bottom, #f3f4f6, #ffffff);
 }
 
 /* Utility Classes */
@@ -142,38 +119,22 @@ body {
 #news::-webkit-scrollbar {
   display: none;
 }
-
 .custom-scrollbar {
   scrollbar-width: none;
 }
-
 .custom-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .tab-button {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  transition: all 0.3s ease-in-out;
-  background-color: #e5e7eb; /* Light gray */
-  color: #374151; /* Dark gray */
-  cursor: pointer;
+  @apply flex items-center px-6 py-3 rounded-full transition-all duration-300 
+  bg-gray-200 text-gray-700 hover:bg-green-200 focus:outline-none;
 }
-
-.tab-button:hover {
-  background-color: #16a34a; /* Light green */
-  color: #ffffff;
-}
-
 .tab-button.active {
-  background-color: #059669; /* Dark green */
-  color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @apply bg-green-600 text-white shadow-lg;
 }
 
-/* Animasi Angka */
+/* animasi angka */
 @keyframes numberAnimation {
   0% {
     opacity: 0;
