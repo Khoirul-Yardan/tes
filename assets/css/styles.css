@@ -46,7 +46,41 @@ body {
 }
 
 /* Responsive Navbar */
+@media (max-width: 1200px) {
+  /* Untuk perangkat tablet dan layar besar */
+  #navbar {
+    position: relative;
+    flex-direction: row;
+    padding: 1rem;
+  }
+
+  #navbar a {
+    padding: 0.5rem 1rem;
+  }
+
+  #hamburgerButton {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Untuk perangkat tablet besar */
+  #navbar {
+    flex-direction: row;
+    padding: 1rem;
+  }
+
+  #navbar a {
+    padding: 0.5rem 1rem;
+  }
+
+  #hamburgerButton {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Untuk perangkat tablet kecil dan ponsel */
   #navbar {
     position: absolute;
     top: 60px;
@@ -67,6 +101,37 @@ body {
   .tab-button {
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
+  }
+
+  #hamburgerButton {
+    display: block;
+  }
+
+  #servicesDropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Untuk ponsel kecil */
+  #navbar a {
+    font-size: 0.9rem;
+  }
+
+  .tab-button {
+    font-size: 0.9rem;
+  }
+
+  .hero-bg {
+    height: 300px;
+  }
+
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 
@@ -140,7 +205,7 @@ body {
   @apply bg-green-600 text-white shadow-lg;
 }
 
-/* animasi angka */
+/* Animasi angka */
 @keyframes numberAnimation {
   0% {
     opacity: 0;
