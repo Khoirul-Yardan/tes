@@ -47,40 +47,15 @@ body {
 
 /* Responsive Navbar */
 @media (max-width: 1200px) {
-  /* Untuk perangkat tablet dan layar besar */
+  /* Untuk perangkat besar seperti laptop */
   #navbar {
-    position: relative;
-    flex-direction: row;
-    padding: 1rem;
-  }
-
-  #navbar a {
-    padding: 0.5rem 1rem;
-  }
-
-  #hamburgerButton {
-    display: none;
+    display: flex;
+    gap: 1rem;
   }
 }
 
-@media (max-width: 992px) {
-  /* Untuk perangkat tablet besar */
-  #navbar {
-    flex-direction: row;
-    padding: 1rem;
-  }
-
-  #navbar a {
-    padding: 0.5rem 1rem;
-  }
-
-  #hamburgerButton {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Untuk perangkat tablet kecil dan ponsel */
+@media (max-width: 1024px) {
+  /* Untuk perangkat tablet dan lebih kecil */
   #navbar {
     position: absolute;
     top: 60px;
@@ -103,41 +78,84 @@ body {
     padding: 0.75rem 1.5rem;
   }
 
-  #hamburgerButton {
-    display: block;
-  }
-
-  #servicesDropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Untuk ponsel kecil */
-  #navbar a {
-    font-size: 0.9rem;
-  }
-
-  .tab-button {
-    font-size: 0.9rem;
-  }
-
+  /* Hero Section */
   .hero-bg {
     height: 300px;
   }
 
-  .container {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+  /* Resize logo */
+  .logo {
+    font-size: 1.25rem;
   }
 }
 
-.container {
-  padding-left: 1rem;
-  padding-right: 1rem;
+@media (max-width: 768px) {
+  /* Untuk perangkat kecil seperti ponsel */
+  #navbar {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #navbar a,
+  #navbar .relative {
+    display: block;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .tab-button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Hero Section */
+  .hero-bg {
+    height: 250px; /* Adjust for smaller screens */
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  #hamburgerButton {
+    display: block; /* Show hamburger button on mobile */
+  }
+
+  /* Social media icons */
+  .social-icons {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .social-icons a {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile Menu (Hamburger) */
+#mobileMenu {
+  display: none;
+}
+
+#mobileMenu.show {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#hamburgerButton {
+  display: block;
 }
 
 /* Hero Section */
@@ -197,15 +215,29 @@ body {
   display: none;
 }
 
+/* Tab Button Styles */
 .tab-button {
-  @apply flex items-center px-6 py-3 rounded-full transition-all duration-300 
-  bg-gray-200 text-gray-700 hover:bg-green-200 focus:outline-none;
-}
-.tab-button.active {
-  @apply bg-green-600 text-white shadow-lg;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  background-color: #f3f4f6;
+  color: #4a4a4a;
+  font-size: 1rem;
 }
 
-/* Animasi angka */
+.tab-button.active {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button:hover {
+  background-color: #e7f7e5;
+}
+
+/* animasi angka */
 @keyframes numberAnimation {
   0% {
     opacity: 0;
