@@ -7,8 +7,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
     <header class="bg-[#85BDA6] py-4 fixed top-0 w-full z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
             <!-- Logo -->
@@ -51,17 +49,19 @@
 
 
     <section class="hero-bg h-screen flex items-center justify-center relative" id="home">
-        <div class="container mx-auto">
-            <nav class="flex flex-col items-center md:flex-row bg-green-500">
-              </nav>
-            <div class="hero text-center py-16">
-              <h1 class="text-4xl font-bold">Pagelaran</h1>
-              <p class="text-lg">Kabupaten Malang, Jawa Timur</p>
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Discover More
-              </button>
+        <div class="hero-overlay absolute inset-0 bg-black opacity-50"></div>
+        <div class="text-left text-white relative z-10 p-4 md:p-0 flex flex-col items-center">
+            <h2 class="text-lg mb-2">WELCOME TO</h2>
+            <div class="pagelaran-text my-4">
+                <span class="text-white text-9xl font-normal font-['Covered_By_Your_Grace'] leading-none">Pagelaran</span>
             </div>
-          </div>
+            <p class="max-w-lg my-5 text-center">
+                Kabupaten Malang, Jawa Timur
+            </p>
+            <button class="bg-green-600 text-white px-6 py-3 rounded-full transition-transform duration-300 ease-in transform hover:scale-105 hover:bg-green-700">
+                Discover More
+            </button>
+        </div>
     </section>
 
     <section class="py-16 bg-white">
@@ -269,6 +269,5 @@
     </section>
     
     <script src="assets/js/script.js"></script>
-    
-</>
+</body>
 </html>
